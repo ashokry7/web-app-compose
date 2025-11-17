@@ -9,11 +9,13 @@ services:
     networks:
       - front-back
     depends_on:
-      - app
+      - webcinema
 
-  app:
+  webcinema:
     image: ashokry32/webcinema:latest
-    container_name: webcinema
+    #container_name: webcinema
+    deploy:
+      replicas: 2
     networks:
       - front-back
       - back-db
